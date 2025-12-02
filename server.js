@@ -21,7 +21,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Path where the CACHE file is stored
-const CACHE_FILE_PATH = path.join(__dirname, '..', 'rates-cache.json');
+const CACHE_FILE_PATH = path.join(__dirname, 'rates-cache.json');
 
 // Read CACHE duration from environment variable
 const CACHE_DURATION_HOURS = Number(process.env.CACHE_DURATION_HOURS) || 24;

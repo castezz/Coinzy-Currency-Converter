@@ -3,3 +3,5 @@ rates-cache.json
 node_modules/
 npm-debug.log
 .DS_Store
+Conceptos de Aprendizaje/
+.vscode/

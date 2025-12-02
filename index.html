@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="./public/css/styles.css" />
+
+    <!-- Normalize CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+
+    <!-- Google Font: Inter -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="./public/assets/img/favicon.png" type="image/png" />
+
+    <!-- Main JS -->
+    <script src="./public/js/main.js" defer></script>
+
+    <!-- Server JS -->
+    <script src="./server.js" defer></script>
+
+
+    <title>Coinzy - Currency Converter</title>
+  </head>
+
+  <body>
+    <!-- ================= HEADER =================== -->
+    <header class="site-header">
+      <!-- Layout Parent (Flexbox: Row, Space-Between) -->
+      <nav class="site-nav">
+        <div class="logo-container">
+          <img src="./public/assets/img/favicon.png" class="logo" alt="Coinzy Logo" />
+          <h2>Coinzy</h2>
+        </div>
+        <div class="center-nav">
+          <a href="#hero-text">Converter</a>
+          <a href="#popular-exchanges-rates">Rates</a>
+          <a href="#trust-information">About</a>
+        </div>
+        <div class="right-nav">
+          <a href="#contact-us"><i class="fa-solid fa-phone"></i></a>
+          <a href="#contact-us"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#contact-us">Contact Us</a>
+        </div>
+        <a href="javascript:void(0);" class="mobile-menu">
+          <i class="fa-solid fa-bars"></i>
+        </a>
+      </nav>
+
+    <div class="mobile-overlay" id="mobile-overlay">
+      <nav class="mobile-nav-links">
+        <a href="#hero-text">Converter</a>
+        <a href="#popular-exchanges-rates">Rates</a>
+        <a href="#trust-information">About</a>
+        <hr class="separator">
+        <a href="#contact-us"><i class="fa-solid fa-phone"></i> Contact Us</a>
+        <a href="#contact-us"><i class="fa-solid fa-envelope"></i> Email Us</a>
+      </nav>
+
+    </div>
+    </header>
+
+    <!-- ================= MAIN CONTENT =================== -->
+    <!-- Layout Parent (Flexbox: Column, Centered) -->
+    <main class="site-main">
+      <div class="hero-container">
+        <section class="txt-content" id="hero-text">
+          <h1>
+            Convert Your Currency with <span class="gradient-h1">Coinzy</span>
+          </h1>
+          <h3>
+            Get accurate, up-to-date exchange rates for over 180 currencies
+            worldwide. Fast, reliable, and completely free.
+          </h3>
+        </section>
+
+        <!-- ================= CONVERTER CARD =================== -->
+        <!-- Layout Parent (Flexbox: Column) -->
+        <section class="hero-container-card">
+          <div class="hero-container-card-item">
+            <label for="amount">
+              Amount </label>
+              <input
+                type="number"
+                id="amount"
+                name="amount"
+                placeholder="Enter amount"
+                required
+              />
+            
+
+            <!-- Layout Parent (Flexbox: Row, Align-End) -->
+          <div class="text-content">
+            <div class="text-content-conversion">
+              <label for="from">From</label>
+                <select name="from" id="from"></select>
+            </div>
+
+            <div class="text-content-convert">
+                <button type="button" id="convert">
+                <i class="fa-solid fa-repeat"></i>
+                </button>
+            </div>
+            <div class="text-content-conversion">
+              <label for="to">To</label>
+              <select name="to" id="to"></select>
+            </div>
+          </div>
+
+            <!-- RESULT -->
+            <span class="separator"></span>
+            <output class="result">
+              <span id="result-amount">900</span>
+              <span id="result-currency">USD</span>
+            </output>
+
+            <output class="equivalence" id="equivalence">
+              <span id="left-value">0</span>
+              <span id="left-currency">USD</span>
+              <span id="equal-sign">=</span>
+              <span id="right-value">0</span>
+              <span id="right-currency">USD</span>
+            </output>
+
+            <button type="submit" id="submit-button">Convert Currency</button>
+          </div>
+      </div>
+        </section>
+
+        <!-- ================= POPULAR EXCHANGE RATES =================== -->
+        <section class="popular-exchanges" id="popular-exchanges-rates">
+          <h1>Popular Exchange Rates</h1>
+          <h3>
+            The most trusted currency converter with accurate rates and powerful
+            features.
+          </h3>
+
+          <!-- Layout Parent (Grid: Auto-Fit Columns) -->
+          <div class="popular-exchange-cards">
+            <div class="popular-exchange-card" id="usd-to-eur">
+              <p>USD → EUR</p>
+              <span class="exchange-rate"></span>
+              <output id="usd-to-eur-result">
+                <span class="exchange-rate-value"></span>
+              </output>
+            </div>
+
+            <div class="popular-exchange-card" id="aud-to-cad">
+              <p>AUD → CAD</p>
+              <span class="exchange-rate"></span>
+              <output id="aud-to-cad-result">
+                <span class="exchange-rate-value"></span>
+              </output>
+            </div>
+
+            <div class="popular-exchange-card" id="mxn-to-cad">
+              <p>MXN → CAD</p>
+              <span class="exchange-rate"></span>
+              <output id="mxn-to-cad-result">
+                <span class="exchange-rate-value"></span>
+              </output>
+            </div>
+
+            <div class="popular-exchange-card" id="cad-to-cop">
+              <p>CAD → COP</p>
+              <span class="exchange-rate"></span>
+              <output id="cad-to-cop-result">
+                <span class="exchange-rate-value"></span>
+              </output>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= TRUST SECTION =================== -->
+        <section class="trust-information" id="trust-information">
+          <h1>Why Trust Coinzy?</h1>
+          <h3>
+            Coinzy is your reliable partner for currency conversion, offering
+            accurate rates, user-friendly tools, and exceptional customer
+            support.
+          </h3>
+
+          <!-- Layout Parent (Flexbox: Wrap, Centered) -->
+          <div class="trust-cards">
+            <div class="trust-card">
+              <i class="fa-solid fa-clock"></i>
+              <h2>Real-Time Rates</h2>
+              <p>
+                Our exchange rates are updated in real-time to ensure accuracy.
+              </p>
+            </div>
+
+            <div class="trust-card">
+              <i class="fa-solid fa-shield"></i>
+              <h2>Secure & Reliable</h2>
+              <p>Bank-grade security with encrypted transactions.</p>
+            </div>
+
+            <div class="trust-card">
+              <i class="fa-solid fa-globe"></i>
+              <h2>180+ Currencies</h2>
+              <p>Support for all major world currencies and crypto.</p>
+            </div>
+
+            <div class="trust-card">
+              <i class="fa-solid fa-arrow-trend-up"></i>
+              <h2>Rate Alerts</h2>
+              <p>Get notified when rates hit your target.</p>
+            </div>
+          </div>
+        
+
+          <!-- ================= TRUST STATS =================== -->
+          <div class="trust-container">
+            <h2>Trusted by millions worldwide</h2>
+
+            <!-- Layout Parent (Flexbox: Wrap, Space-Around) -->
+            <div class="trust-stats">
+              <div class="stat-item">
+                <h3>10M+</h3>
+                <p>Users</p>
+              </div>
+
+              <div class="stat-item">
+                <h3>180+</h3>
+                <p>Currencies Supported</p>
+              </div>
+
+              <div class="stat-item">
+                <h3>99.9%</h3>
+                <p>Uptime</p>
+              </div>
+            </div>
+          </div>
+        </section>
+    </main>
+    <!-- ================= FOOTER =================== -->
+    <!-- Layout Parent (Grid: 4 Columns) -->
+      <footer class="contact-info" id="contact-us">
+        <div class="coinzy-footer-logo">
+          <img src="./public/assets/img/favicon.png" class="logo" alt="Coinzy Logo" />
+          <h2>Coinzy</h2>
+          <p>Your trusted partner for accurate currency conversion and exchange rates.</p>
+        </div>
+      
+
+        <div class="quick-links">
+          <p>Quick Links</p>
+          <ul>
+            <li><a href="#hero-text">Converter</a></li>
+            <li><a href="#popular-exchanges-rates">Rates</a></li>
+            <li><a href="#trust-information">About Us</a></li>
+          </ul>
+        </div>
+
+        <div class="quick-links">
+          <p>Support</p>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">API Documentation</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <div class="quick-links">
+          <p>Contact Us</p>
+          <ul>
+            <li class="contact-i">
+              <i class="fa-solid fa-envelope"></i
+              ><span>andres0225@gmail.com</span>
+            </li> 
+            <li class="contact-i">
+              <i class="fa-solid fa-phone"></i><span>+1 (437) 601-8816</span>
+            </li>
+            <li class="contact-i">
+              <i class="fa-solid fa-location-dot"></i
+              ><span>Toronto, Canada</span>
+            </li>
+          </ul>
+        </div> 
+
+        <p class="copyright">&copy; 2025 <strong>Coinzy</strong>. All rights reserved.</p>
+      </footer>
+    </div>
+  </body>
+</html>

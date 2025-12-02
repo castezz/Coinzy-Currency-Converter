@@ -56,13 +56,20 @@ CACHE_DURATION_HOURS=24
 
 # Port where the Express server will run (default 3000)
 PORT=3000
+```
 
-## ▶️ Running the Server
+---
+
+
+## 🚀 Running the Server
 
 To start the server in development mode, run:
 
 ```bash
 npm run dev
+```
+
+---
 
 ## 📌 Example Response — `/api/rates`
 
@@ -83,7 +90,3 @@ npm run dev
   }
 }
 ```
-
-## 🎓 Author
-
-- Andres Castellanos 

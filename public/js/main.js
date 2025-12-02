@@ -42,7 +42,7 @@ if (overlay) {
  * 2. CURRENCY CONVERTER SETUP
  * ========================================= */
 
-const API_URL = 'http://localhost:3000/api/rates';
+const API_URL = 'https://coinzy-currency-converter.onrender.com/api/rates';
 
 let conversionRates = {};
 let baseCode = '';
